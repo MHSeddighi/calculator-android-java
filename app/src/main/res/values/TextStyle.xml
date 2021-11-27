@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="textAppreance" parent="Widget.MaterialComponents.Button.TextButton.Icon">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">#E0EABD</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
