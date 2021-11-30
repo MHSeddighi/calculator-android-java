@@ -7,9 +7,7 @@ android {
     buildToolsVersion '30.0.3'
 
     defaultConfig {
-        configurations.all {
-            resolutionStrategy { force 'androidx.core:core:1.6.0' }
-        }
+        vectorDrawables.useSupportLibrary="true"
         applicationId "com.google.calculator"
         minSdkVersion 16
         targetSdkVersion 31
