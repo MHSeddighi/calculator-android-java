@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="#1ECADA">
+    <item android:id="@+id/special_effects_controller_view_tag"
+        android:drawable="@android:color/holo_green_light"/>
+
+</ripple>
