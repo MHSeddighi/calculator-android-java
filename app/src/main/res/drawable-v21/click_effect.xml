@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="#1ECADA">
-    <item android:drawable="@android:color/holo_green_light"/>
+    <item android:drawable="@android:color/holo_green_light">
+        <shape android:shape="rectangle">
+            <solid android:color="#F8DCAEAE" />
+        </shape>
+    </item>
 
 </ripple>

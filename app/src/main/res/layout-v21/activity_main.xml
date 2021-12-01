@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".MainActivity"
-    tools:ignore="HardcodedText">
+    tools:context=".MainActivity">
+
 
     <EditText
         android:id="@+id/input_number"
@@ -32,6 +32,7 @@
         android:background="@drawable/click_effect"
         android:text="AC"
         app:layout_constraintBottom_toTopOf="@id/btn_1_0"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/btn_0_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline2" />
@@ -286,16 +287,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="300dp" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-        android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@+id/input_number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
