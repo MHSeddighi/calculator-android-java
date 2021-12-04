@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:color="#1ECADA"
-    tools:targetApi="lollipop">
-    <item android:id="@+id/special_effects_controller_view_tag"
-        android:drawable="@android:color/holo_green_light">
+    android:color="@color/colorPrimaryDark">
+    <item>
         <shape android:shape="rectangle">
-            <solid android:color="#F8DCAEAE" />
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="32dp"/>
         </shape>
     </item>
-
-
 </ripple>

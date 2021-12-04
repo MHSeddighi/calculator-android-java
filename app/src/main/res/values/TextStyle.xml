@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextAppearance" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textSize">26sp</item>
-        <item name="android:textColor">#E0EABD</item>
+    <style name="TextAppearance" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#D3E691</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:background">@color/purple_200</item>
 
     </style>
 </resources>

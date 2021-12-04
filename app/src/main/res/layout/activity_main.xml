@@ -13,11 +13,10 @@
         android:id="@+id/input_number"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/teal_700"
-        android:hint="write"
-        android:textSize="98sp"
         android:gravity="center"
+        android:hint="write"
         android:inputType="number"
+        android:textSize="98sp"
         app:layout_constraintBottom_toTopOf="@id/btn_0_0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +28,6 @@
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/click_effect"
         android:text="AC"
         app:layout_constraintBottom_toTopOf="@id/btn_1_0"
         app:layout_constraintEnd_toStartOf="@id/btn_0_1"
@@ -41,12 +39,14 @@
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:focusable="true"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@id/btn_1_1"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/btn_0_2"
         app:layout_constraintStart_toEndOf="@id/btn_0_0"
         app:layout_constraintTop_toBottomOf="@id/guideline2"
-        app:srcCompat="@drawable/equal_math_sign_icon" />
+        app:srcCompat="@drawable/ic_delete_back_icon" />
 
     <Button
         android:id="@+id/btn_0_2"
@@ -65,7 +65,6 @@
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/click_effect"
         android:text="/"
         app:layout_constraintBottom_toTopOf="@id/btn_1_3"
         app:layout_constraintDimensionRatio="1:1"
@@ -230,12 +229,13 @@
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/btn_4_1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_3_0"
-        app:srcCompat="@drawable/ic_baseline_cached_24" />
+        app:srcCompat="@drawable/ic_change_icon" />
 
     <Button
         android:id="@+id/btn_4_1"
@@ -266,6 +266,7 @@
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
