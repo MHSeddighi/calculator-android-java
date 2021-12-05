@@ -84,7 +84,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.btn_0_0:break;
+            case R.id.btn_0_0:
+                removeEditorText(true);
+                break;
+            case R.id.btn_0_1:
+                removeEditorText(false);
+                break;
+            default:break;
+        }
+    }
+
+    public void removeEditorText(boolean deleteAll){
+        CharSequence text=textEditor.getText();
+        if(text==null) {
+            return;
+        }else if(deleteAll){
+            textEditor.setText("");
+        }else{
+            textEditor.setText(text.subSequence(0,text.length()-1));
         }
     }
 }
