@@ -1,31 +1,32 @@
 package com.google.calculator;
 
 import android.app.Activity;
-import android.content.Context;
-import android.text.Layout;
-import android.view.LayoutInflater;
+import android.os.Build;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.view.View;
-
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class Monitor {
     private Activity activity;
-    private ConstraintLayout layout;
     private EditText editText;
     private TextView textView;
 
 
-    public Monitor() {
+    public Monitor(Activity activity) {
+        this.activity=activity;
         init();
     }
 
     private void init() {
-        layout=activity.findViewById();
+        editText=activity.findViewById(R.id.editText);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            editText.setShowSoftInputOnFocus(false);
+        }
+
+        textView=activity.findViewById(R.id.textView);
+
     }
 
-    public void removeEditorText(boolean deleteAll){
+    private void removeEditorText(boolean deleteAll){
         CharSequence text= editText.getText();
         if(text==null) {
             return;
@@ -35,4 +36,25 @@ public class Monitor {
             editText.setText(text.subSequence(0,text.length()-1));
         }
     }
+
+    public EditText getEditText() {
+        return editText;
+    }
+
+    public void setEditText(EditText editText) {
+        this.editText = editText;
+    }
+
+    public TextView getTextView() {
+        return textView;
+    }
+
+    public void setTextView(TextView textView) {
+        this.textView = textView;
+    }
+
+    private void textScanner(){
+
+    }
+
 }
