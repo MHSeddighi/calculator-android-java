@@ -6,14 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText textEditor;
+    private EditText editText;
     private Button clearAll;
     private ImageButton backDelete;
     private Button percent;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void init(){
-        textEditor=findViewById(R.id.input_number);
+        editText =findViewById(R.id.input_number);
         clearAll=findViewById(R.id.btn_0_0);
         multiple=findViewById(R.id.btn_1_3);
         equal= (ImageButton) findViewById(R.id.btn_4_3);
@@ -62,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seven=findViewById(R.id.btn_3_0);
         eight=findViewById(R.id.btn_3_1);
         nine=findViewById(R.id.btn_3_2);
+        editText.setShowSoftInputOnFocus(false);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClickNumbers(View v) {
         Button btn = (Button)v;
         if(btn!=null){
-            textEditor.append(btn.getText());
+            editText.append(btn.getText());
         }
     }
 
@@ -94,14 +94,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    public void removeEditorText(boolean deleteAll){
-        CharSequence text=textEditor.getText();
-        if(text==null) {
-            return;
-        }else if(deleteAll){
-            textEditor.setText("");
-        }else{
-            textEditor.setText(text.subSequence(0,text.length()-1));
-        }
-    }
+
 }
