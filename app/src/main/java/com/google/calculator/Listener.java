@@ -86,14 +86,14 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
         Editable text =textDisplayer.getEditText().getText();
         switch (view.getId()){
             case R.id.clear:
-                textDisplayer.delete(true);
+                textDisplayer.delete(true,false);
                 return true;
             case R.id.equal:
                 return true;
             case R.id.change:
                 return true;
             case R.id.back_delete:
-                textDisplayer.delete(false);
+                textDisplayer.delete(false,false);
                 return true;
             default:
                 return false;
@@ -102,7 +102,9 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
 
     @Override
     public boolean onLongClick(View v) {
-        textDisplayer.delete(false);
+        if(v.getId()==backDelete.getId()){
+            textDisplayer.delete(false,true);
+        }
         return false;
     }
 }
