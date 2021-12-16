@@ -10,9 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity{
 
-    private EditText editText;
     private Button clearAll;
     private ImageButton backDelete;
     private Button percent;
@@ -41,7 +40,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void init(){
-        editText =findViewById(R.id.input_number);
         clearAll=findViewById(R.id.btn_0_0);
         multiple=findViewById(R.id.btn_1_3);
         equal= (ImageButton) findViewById(R.id.btn_4_3);
@@ -61,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         seven=findViewById(R.id.btn_3_0);
         eight=findViewById(R.id.btn_3_1);
         nine=findViewById(R.id.btn_3_2);
-        editText.setShowSoftInputOnFocus(false);
     }
 
     @Override
@@ -73,26 +70,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
-    public void onClickNumbers(View v) {
-        Button btn = (Button)v;
-        if(btn!=null){
-            editText.append(btn.getText());
-        }
-    }
+//    public void onClickNumbers(View v) {
+//        Button btn = (Button)v;
+//        if(btn!=null){
+//        }
+//    }
 
 
-    @Override
-    public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.btn_0_0:
-                removeEditorText(true);
-                break;
-            case R.id.btn_0_1:
-                removeEditorText(false);
-                break;
-            default:break;
-        }
-    }
+//    @Override
+//    public void onClick(View view) {
+//        switch(view.getId()){
+//            case R.id.btn_0_0:
+//                removeEditorText(true);
+//                break;
+//            case R.id.btn_0_1:
+//                removeEditorText(false);
+//                break;
+//            default:break;
+//        }
+//    }
 
 
 }
