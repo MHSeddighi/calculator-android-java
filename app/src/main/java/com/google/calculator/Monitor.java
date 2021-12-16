@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Monitor implements View.OnClickListener, View.OnFocusChangeListener {
+public class Monitor{
     private Activity activity;
     private EditText editText;
     private TextView textView;
@@ -23,14 +23,11 @@ public class Monitor implements View.OnClickListener, View.OnFocusChangeListener
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             editText.setShowSoftInputOnFocus(false);
         }
-        editText.setOnFocusChangeListener(this);
-        editText.setOnClickListener(this);
-        textView.setOnClickListener(this);
         textView=activity.findViewById(R.id.textView);
 
     }
 
-    private void removeEditorText(boolean deleteAll){
+    public void delete(boolean deleteAll){
         int length=editText.getText().length();
         Editable text =editText.getText();
         if(text==null) {
@@ -43,6 +40,10 @@ public class Monitor implements View.OnClickListener, View.OnFocusChangeListener
                 text.delete(length - 1, length);
             }
         }
+    }
+
+    public Editable append(CharSequence ch){
+        return editText.getText().append(ch);
     }
 
     public EditText getEditText() {
@@ -62,17 +63,7 @@ public class Monitor implements View.OnClickListener, View.OnFocusChangeListener
         textView.setText(text);
     }
 
-    private void textScanner(){
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
-    }
-
-    @Override
-    public void onFocusChange(View v, boolean hasFocus) {
+    private void textScanner() {
 
     }
 }

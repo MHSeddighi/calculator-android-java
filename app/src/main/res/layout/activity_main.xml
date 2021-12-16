@@ -34,294 +34,274 @@
         app:layout_constraintTop_toBottomOf="@id/editText" />
 
     <Button
-        android:id="@+id/btn_0_0"
+        android:id="@+id/clear"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/clearButton"
-        android:onClick="onClick"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_1_0"
-        app:layout_constraintEnd_toStartOf="@id/btn_0_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_7"
+        app:layout_constraintEnd_toStartOf="@id/back_delete"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline2" />
 
     <ImageButton
-        android:id="@+id/btn_0_1"
+        android:id="@+id/back_delete"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:focusable="true"
-        android:onClick="onClick"
         android:scaleType="fitCenter"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_1_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_8"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_0_2"
-        app:layout_constraintStart_toEndOf="@id/btn_0_0"
+        app:layout_constraintEnd_toStartOf="@id/btn_percent"
+        app:layout_constraintStart_toEndOf="@id/clear"
         app:layout_constraintTop_toBottomOf="@id/guideline2"
         app:srcCompat="@drawable/ic_delete_back_icon" />
 
     <Button
-        android:id="@+id/btn_0_2"
+        android:id="@+id/btn_percent"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/percent"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_1_3"
+        app:layout_constraintBottom_toTopOf="@id/btn_multiply"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_0_3"
-        app:layout_constraintStart_toEndOf="@id/btn_0_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_divide"
+        app:layout_constraintStart_toEndOf="@id/back_delete"
         app:layout_constraintTop_toBottomOf="@id/guideline2" />
 
     <Button
-        android:id="@+id/btn_0_3"
+        android:id="@+id/btn_divide"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/divide"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_1_3"
+        app:layout_constraintBottom_toTopOf="@id/btn_multiply"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_0_2"
+        app:layout_constraintStart_toEndOf="@id/btn_percent"
         app:layout_constraintTop_toBottomOf="@id/guideline2" />
 
 
     <Button
-        android:id="@+id/btn_1_0"
+        android:id="@+id/btn_7"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="7"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/btn_2_0"
+        app:layout_constraintBottom_toTopOf="@id/btn_4"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@+id/btn_1_1"
+        app:layout_constraintEnd_toStartOf="@+id/btn_8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_0_0" />
+        app:layout_constraintTop_toBottomOf="@id/clear" />
 
     <Button
-        android:id="@+id/btn_1_1"
+        android:id="@+id/btn_8"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="8"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_2_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_5"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_1_2"
-        app:layout_constraintStart_toEndOf="@+id/btn_1_0"
-        app:layout_constraintTop_toBottomOf="@id/btn_0_1" />
+        app:layout_constraintEnd_toStartOf="@id/btn_9"
+        app:layout_constraintStart_toEndOf="@+id/btn_7"
+        app:layout_constraintTop_toBottomOf="@id/back_delete" />
 
     <Button
-        android:id="@+id/btn_1_2"
+        android:id="@+id/btn_9"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="9"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_2_2"
+        app:layout_constraintBottom_toTopOf="@id/btn_6"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_1_3"
-        app:layout_constraintStart_toEndOf="@id/btn_1_1"
-        app:layout_constraintTop_toBottomOf="@id/btn_0_2" />
+        app:layout_constraintEnd_toStartOf="@id/btn_multiply"
+        app:layout_constraintStart_toEndOf="@id/btn_8"
+        app:layout_constraintTop_toBottomOf="@id/btn_percent" />
 
     <Button
-        android:id="@+id/btn_1_3"
+        android:id="@+id/btn_multiply"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="*"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_2_3"
+        app:layout_constraintBottom_toTopOf="@id/btn_minus"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_1_2"
-        app:layout_constraintTop_toBottomOf="@id/btn_0_3" />
+        app:layout_constraintStart_toEndOf="@id/btn_9"
+        app:layout_constraintTop_toBottomOf="@id/btn_divide" />
 
 
     <Button
-        android:id="@+id/btn_2_0"
+        android:id="@+id/btn_4"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="4"
-        android:onClick="onClickNumbers"
         android:textStyle="bold"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_3_0"
+        app:layout_constraintBottom_toTopOf="@id/btn_1"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_2_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_1_0" />
+        app:layout_constraintTop_toBottomOf="@id/btn_7" />
 
     <Button
-        android:id="@+id/btn_2_1"
+        android:id="@+id/btn_5"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="5"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_3_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_2"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_2_2"
-        app:layout_constraintStart_toEndOf="@id/btn_2_0"
-        app:layout_constraintTop_toBottomOf="@id/btn_1_1" />
+        app:layout_constraintEnd_toStartOf="@id/btn_6"
+        app:layout_constraintStart_toEndOf="@id/btn_4"
+        app:layout_constraintTop_toBottomOf="@id/btn_8" />
 
     <Button
-        android:id="@+id/btn_2_2"
+        android:id="@+id/btn_6"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="6"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_3_2"
+        app:layout_constraintBottom_toTopOf="@id/btn_3"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_2_3"
-        app:layout_constraintStart_toEndOf="@id/btn_2_1"
-        app:layout_constraintTop_toBottomOf="@id/btn_1_2" />
+        app:layout_constraintEnd_toStartOf="@id/btn_minus"
+        app:layout_constraintStart_toEndOf="@id/btn_5"
+        app:layout_constraintTop_toBottomOf="@id/btn_9" />
 
 
     <Button
-        android:id="@+id/btn_2_3"
+        android:id="@+id/btn_minus"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="-"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_3_3"
+        app:layout_constraintBottom_toTopOf="@id/btn_plus"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_2_2"
-        app:layout_constraintTop_toBottomOf="@id/btn_1_3" />
+        app:layout_constraintStart_toEndOf="@id/btn_6"
+        app:layout_constraintTop_toBottomOf="@id/btn_multiply" />
 
 
     <Button
-        android:id="@+id/btn_3_0"
+        android:id="@+id/btn_1"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="1"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/btn_4_0"
+        app:layout_constraintBottom_toTopOf="@id/change"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_3_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_2_0" />
+        app:layout_constraintTop_toBottomOf="@id/btn_4" />
 
     <Button
-        android:id="@+id/btn_3_1"
+        android:id="@+id/btn_2"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="2"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_4_1"
+        app:layout_constraintBottom_toTopOf="@id/btn_0"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_3_2"
-        app:layout_constraintStart_toEndOf="@id/btn_3_0"
-        app:layout_constraintTop_toBottomOf="@id/btn_2_1" />
+        app:layout_constraintEnd_toStartOf="@id/btn_3"
+        app:layout_constraintStart_toEndOf="@id/btn_1"
+        app:layout_constraintTop_toBottomOf="@id/btn_5" />
 
     <Button
-        android:id="@+id/btn_3_2"
+        android:id="@+id/btn_3"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="3"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_4_2"
+        app:layout_constraintBottom_toTopOf="@id/btn_dot"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_3_3"
-        app:layout_constraintStart_toEndOf="@id/btn_3_1"
-        app:layout_constraintTop_toBottomOf="@id/btn_2_2" />
+        app:layout_constraintEnd_toStartOf="@id/btn_plus"
+        app:layout_constraintStart_toEndOf="@id/btn_2"
+        app:layout_constraintTop_toBottomOf="@id/btn_6" />
 
     <Button
-        android:id="@+id/btn_3_3"
+        android:id="@+id/btn_plus"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="+"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_4_3"
+        app:layout_constraintBottom_toTopOf="@id/equal"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_3_2"
-        app:layout_constraintTop_toBottomOf="@id/btn_2_3" />
+        app:layout_constraintStart_toEndOf="@id/btn_3"
+        app:layout_constraintTop_toBottomOf="@id/btn_minus" />
 
 
     <ImageButton
-        android:id="@+id/btn_4_0"
+        android:id="@+id/change"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="onClick"
         android:background="@drawable/click_effect"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_4_1"
+        app:layout_constraintEnd_toStartOf="@id/btn_0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_3_0"
+        app:layout_constraintTop_toBottomOf="@id/btn_1"
         app:srcCompat="@drawable/ic_change_icon" />
 
     <Button
-        android:id="@+id/btn_4_1"
+        android:id="@+id/btn_0"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="0"
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_4_2"
-        app:layout_constraintStart_toEndOf="@id/btn_4_0"
-        app:layout_constraintTop_toBottomOf="@id/btn_3_1" />
+        app:layout_constraintEnd_toStartOf="@id/btn_dot"
+        app:layout_constraintStart_toEndOf="@id/change"
+        app:layout_constraintTop_toBottomOf="@id/btn_2" />
 
     <Button
-        android:id="@+id/btn_4_2"
+        android:id="@+id/btn_dot"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="."
-        android:onClick="onClickNumbers"
         android:background="@drawable/click_effect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_4_3"
-        app:layout_constraintStart_toEndOf="@id/btn_4_1"
-        app:layout_constraintTop_toBottomOf="@id/btn_3_2" />
+        app:layout_constraintEnd_toStartOf="@id/equal"
+        app:layout_constraintStart_toEndOf="@id/btn_0"
+        app:layout_constraintTop_toBottomOf="@id/btn_3" />
 
     <ImageButton
-        android:id="@+id/btn_4_3"
+        android:id="@+id/equal"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:onClick="onClick"
         android:scaleType="fitCenter"
         android:background="@drawable/click_effect"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/btn_4_2"
-        app:layout_constraintTop_toBottomOf="@id/btn_3_3"
+        app:layout_constraintStart_toEndOf="@id/btn_dot"
+        app:layout_constraintTop_toBottomOf="@id/btn_plus"
         app:srcCompat="@drawable/equal_math_sign_icon" />
 
     <androidx.constraintlayout.widget.Guideline
