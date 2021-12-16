@@ -6,84 +6,103 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.view.View;
 
-public class Listener implements View.OnClickListener{
+import java.util.HashMap;
 
-    private Button clearAll;
+public class Listener implements View.OnClickListener, View.OnLongClickListener {
+
+    private HashMap<String,Button> operatorButtons;
+
+    private Button clear;
     private ImageButton backDelete;
-    private Button percent;
-    private Button minus;
-    private Button plus;
     private ImageButton equal;
-    private Button dot;
     private ImageButton change;
-    private Button multiple;
-    private Button divide;
 
-    private Button seven;
-    private Button eight;
-    private Button nine;
-    private Button six;
-    private Button five;
-    private Button four;
-    private Button three;
-    private Button two;
-    private Button one;
+    private Button[] numberButtons;
 
     private Activity activity;
     private Monitor textDisplayer;
 
     public Listener(Activity activity) {
         this.activity=activity;
+        numberButtons=new Button[9];
+        textDisplayer=new Monitor(activity);
+        operatorButtons=new HashMap<String, Button>();
         init();
     }
 
     private void init() {
-        clearAll=activity.findViewById(R.id.clear);
-        multiple=activity.findViewById(R.id.btn_multiply);
+        clear =activity.findViewById(R.id.clear);
         equal= (ImageButton) activity.findViewById(R.id.equal);
-        minus=activity.findViewById(R.id.btn_minus);
-        plus=activity.findViewById(R.id.btn_plus);
         backDelete=(ImageButton)activity.findViewById(R.id.back_delete);
         change=(ImageButton)activity.findViewById(R.id.change);
-        dot=activity.findViewById(R.id.btn_dot);
-        percent=activity.findViewById(R.id.btn_percent);
-        divide=activity.findViewById(R.id.btn_divide);
-        one=activity.findViewById(R.id.btn_1);
-        two=activity.findViewById(R.id.btn_2);
-        three=activity.findViewById(R.id.btn_3);
-        four=activity.findViewById(R.id.btn_4);
-        five=activity.findViewById(R.id.btn_5);
-        six=activity.findViewById(R.id.btn_6);
-        seven=activity.findViewById(R.id.btn_1);
-        eight=activity.findViewById(R.id.btn_2);
-        nine=activity.findViewById(R.id.btn_3);
-        textDisplayer=new Monitor(activity);
+
+        operatorButtons.put("multiple",activity.findViewById(R.id.btn_multiple));
+        operatorButtons.put("minus",activity.findViewById(R.id.btn_minus));
+        operatorButtons.put("plus",activity.findViewById(R.id.btn_plus));
+        operatorButtons.put("dot",activity.findViewById(R.id.btn_dot));
+        operatorButtons.put("percent",activity.findViewById(R.id.btn_percent));
+        operatorButtons.put("divide",activity.findViewById(R.id.btn_divide));
+
+        numberButtons[0]=activity.findViewById(R.id.btn_1);
+        numberButtons[1]=activity.findViewById(R.id.btn_2);
+        numberButtons[2]=activity.findViewById(R.id.btn_3);
+        numberButtons[3]=activity.findViewById(R.id.btn_4);
+        numberButtons[4]=activity.findViewById(R.id.btn_5);
+        numberButtons[5]=activity.findViewById(R.id.btn_6);
+        numberButtons[6]=activity.findViewById(R.id.btn_7);
+        numberButtons[7]=activity.findViewById(R.id.btn_8);
+        numberButtons[8]=activity.findViewById(R.id.btn_9);
+
+        setListeners();
+    }
+
+    private void setListeners(){
+        clear.setOnClickListener(this);
+        change.setOnClickListener(this);
+        equal.setOnClickListener(this);
+        backDelete.setOnClickListener(this);
+        backDelete.setOnLongClickListener(this);
+
+        for (Button btn : numberButtons) {
+            btn.setOnClickListener(this);
+        }
+        for (Button btn:operatorButtons.values()){
+            btn.setOnClickListener(this);
+        }
     }
 
     @Override
     public void onClick(View v) {
-        onClickEditButtons(v);
-        if(v.get){
-
+        boolean isFinded=onClickEditButtons(v);
+        if(isFinded){
+            return;
         }
+        Button button=(Button)v;
+        if(button!=null)
+            textDisplayer.append(button.getText());
     }
 
-    private void onClickEditButtons(View view){
+    private boolean onClickEditButtons(View view){
         Editable text =textDisplayer.getEditText().getText();
         switch (view.getId()){
             case R.id.clear:
                 textDisplayer.delete(true);
-                break;
+                return true;
             case R.id.equal:
-                break;
+                return true;
             case R.id.change:
-                break;
+                return true;
             case R.id.back_delete:
                 textDisplayer.delete(false);
-                break;
+                return true;
             default:
+                return false;
         }
-
     }
 
+    @Override
+    public boolean onLongClick(View v) {
+        textDisplayer.delete(false);
+        return false;
+    }
 }

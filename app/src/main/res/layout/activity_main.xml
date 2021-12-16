@@ -67,7 +67,7 @@
         android:layout_height="0dp"
         android:text="@string/percent"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_multiply"
+        app:layout_constraintBottom_toTopOf="@id/btn_multiple"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/btn_divide"
         app:layout_constraintStart_toEndOf="@id/back_delete"
@@ -80,7 +80,7 @@
         android:layout_height="0dp"
         android:text="@string/divide"
         android:background="@drawable/click_effect"
-        app:layout_constraintBottom_toTopOf="@id/btn_multiply"
+        app:layout_constraintBottom_toTopOf="@id/btn_multiple"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_percent"
@@ -123,12 +123,12 @@
         android:background="@drawable/click_effect"
         app:layout_constraintBottom_toTopOf="@id/btn_6"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintEnd_toStartOf="@id/btn_multiply"
+        app:layout_constraintEnd_toStartOf="@id/btn_multiple"
         app:layout_constraintStart_toEndOf="@id/btn_8"
         app:layout_constraintTop_toBottomOf="@id/btn_percent" />
 
     <Button
-        android:id="@+id/btn_multiply"
+        android:id="@+id/btn_multiple"
         style="@style/TextAppearance"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -193,7 +193,7 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_6"
-        app:layout_constraintTop_toBottomOf="@id/btn_multiply" />
+        app:layout_constraintTop_toBottomOf="@id/btn_multiple" />
 
 
     <Button

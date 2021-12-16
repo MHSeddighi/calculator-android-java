@@ -26,25 +26,4 @@ public class MainActivity extends AppCompatActivity{
         return true;
     }
 
-//    public void onClickNumbers(View v) {
-//        Button btn = (Button)v;
-//        if(btn!=null){
-//        }
-//    }
-
-
-//    @Override
-//    public void onClick(View view) {
-//        switch(view.getId()){
-//            case R.id.btn_0_0:
-//                removeEditorText(true);
-//                break;
-//            case R.id.btn_0_1:
-//                removeEditorText(false);
-//                break;
-//            default:break;
-//        }
-//    }
-
-
 }
