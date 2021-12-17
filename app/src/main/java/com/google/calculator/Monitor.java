@@ -3,13 +3,17 @@ package com.google.calculator;
 import android.app.Activity;
 import android.os.Build;
 import android.text.Editable;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Monitor{
+public class Monitor {
+
     private Activity activity;
     private EditText editText;
     private TextView textView;
@@ -51,8 +55,9 @@ public class Monitor{
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        if(text.length()!=0){
-                            text.delete(text.length() - 1, text.length());
+
+                        if(text.length()>0){
+                            text.delete(text.length() - 2, text.length());
                         }
                     }
                 });
@@ -60,15 +65,21 @@ public class Monitor{
                     this.cancel();
                 }
             }
-        }, 0, 200);
+        }, 150, 150);
     }
 
-    public Editable append(CharSequence ch){
-        return editText.getText().append(ch);
-    }
-
-    public EditText getEditText() {
-        return editText;
+    public Editable append(CharSequence text, HashMap<String, Button> operatorButtons){
+        Editable content =editText.getText();
+        int length=content.length();
+        if(text==null){
+            return null;
+        }
+        if(operatorButtons.get(text)==null){
+            content.append(text);
+        }else if(text.length()>1){
+            content.append(text,length-2,length);
+        }
+        return content;
     }
 
     public void setEditText(CharSequence text) {
@@ -76,15 +87,12 @@ public class Monitor{
             editText.setText(text);
     }
 
-    public TextView getTextView() {
-        return textView;
-    }
-
     public void setTextView(String text) {
         textView.setText(text);
     }
 
-    private void textScanner() {
-
+    private boolean textScanner() {
+        String text=editText.getText().toString();
+        return text.matches("");
     }
 }

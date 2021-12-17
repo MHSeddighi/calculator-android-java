@@ -79,11 +79,10 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
         }
         Button button=(Button)v;
         if(button!=null)
-            textDisplayer.append(button.getText());
+            textDisplayer.append(button.getText(),operatorButtons);
     }
 
     private boolean onClickEditButtons(View view){
-        Editable text =textDisplayer.getEditText().getText();
         switch (view.getId()){
             case R.id.clear:
                 textDisplayer.delete(true,false);
