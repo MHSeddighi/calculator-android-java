@@ -14,7 +14,7 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
 
     private Button clear;
     private ImageButton backDelete;
-    private ImageButton equal;
+    private Button equal;
     private ImageButton change;
 
     private Button[] numberButtons;
@@ -31,17 +31,17 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
     }
 
     private void init() {
-        clear =activity.findViewById(R.id.clear);
-        equal= (ImageButton) activity.findViewById(R.id.equal);
+        clear = activity.findViewById(R.id.clear);
+        equal = activity.findViewById(R.id.equal);
         backDelete=(ImageButton)activity.findViewById(R.id.back_delete);
         change=(ImageButton)activity.findViewById(R.id.change);
 
-        operatorButtons.put("multiple",activity.findViewById(R.id.btn_multiple));
-        operatorButtons.put("minus",activity.findViewById(R.id.btn_minus));
-        operatorButtons.put("plus",activity.findViewById(R.id.btn_plus));
-        operatorButtons.put("dot",activity.findViewById(R.id.btn_dot));
-        operatorButtons.put("percent",activity.findViewById(R.id.btn_percent));
-        operatorButtons.put("divide",activity.findViewById(R.id.btn_divide));
+        operatorButtons.put("×",activity.findViewById(R.id.btn_multiple));
+        operatorButtons.put("-",activity.findViewById(R.id.btn_minus));
+        operatorButtons.put("+",activity.findViewById(R.id.btn_plus));
+        operatorButtons.put(".",activity.findViewById(R.id.btn_dot));
+        operatorButtons.put("%",activity.findViewById(R.id.btn_percent));
+        operatorButtons.put("÷",activity.findViewById(R.id.btn_divide));
 
         numberButtons[0]=activity.findViewById(R.id.btn_1);
         numberButtons[1]=activity.findViewById(R.id.btn_2);

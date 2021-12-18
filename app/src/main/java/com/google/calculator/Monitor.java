@@ -55,13 +55,12 @@ public class Monitor {
                 activity.runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-
-                        if(text.length()>0){
+                        if(text.length()>1){
                             text.delete(text.length() - 2, text.length());
                         }
                     }
                 });
-                if(text.length()==0){
+                if(text.length()<2){
                     this.cancel();
                 }
             }
@@ -72,12 +71,14 @@ public class Monitor {
         Editable content =editText.getText();
         int length=content.length();
         if(text==null){
-            return null;
+            return content;
         }
         if(operatorButtons.get(text)==null){
             content.append(text);
-        }else if(text.length()>1){
-            content.append(text,length-2,length);
+        }else if(content.charAt(length-1)==text.charAt(0) && length > 0){
+            content.replace(length-1,length,text);
+        }else{
+            content.append(text);
         }
         return content;
     }

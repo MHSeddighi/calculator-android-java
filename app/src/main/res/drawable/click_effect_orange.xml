@@ -6,7 +6,7 @@
     <item>
         <shape android:shape="oval"
             android:innerRadius="10dp">
-            <solid android:color="@color/colorControlHighlight"/>
+            <solid android:color="#F8EC6A2E"/>
         </shape>
     </item>
 

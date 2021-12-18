@@ -3,4 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:color="#DD04ED"
     tools:targetApi="lollipop">
+    <item>
+        <shape android:shape="oval"
+            android:innerRadius="10dp">
+            <solid android:color="@color/colorControlHighlight"/>
+        </shape>
+    </item>
+
 </ripple>
