@@ -6,9 +6,8 @@ import android.text.Editable;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
+import android.view.View;
 
-import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -42,7 +41,7 @@ public class Monitor {
             } else if(fastDelete){
                 fastDelete();
             }else{
-                text.delete(length - 1, length);
+                text.delete(editText.getSelectionStart(), editText.getSelectionStart()+1);
             }
         }
     }
@@ -56,29 +55,32 @@ public class Monitor {
                     @Override
                     public void run() {
                         if(text.length()>1){
-                            text.delete(text.length() - 2, text.length());
+                            text.delete(editText.getSelectionStart(), editText.getSelectionStart()+1);
                         }
                     }
                 });
                 if(text.length()<2){
+                    text.clear();
                     this.cancel();
                 }
             }
         }, 150, 150);
     }
 
-    public Editable append(CharSequence text, HashMap<String, Button> operatorButtons){
+    public Editable append(View view,Button previousClicked){
         Editable content =editText.getText();
         int length=content.length();
-        if(text==null){
+        if(view==null){
             return content;
         }
-        if(operatorButtons.get(text)==null){
-            content.append(text);
-        }else if(content.charAt(length-1)==text.charAt(0) && length > 0){
-            content.replace(length-1,length,text);
+        if(!view.getTag().equals("operator")){
+            content.append(((Button)view).getText());
+
+        }else if(length > 0 && previousClicked.getTag().equals("operator")){
+            content.replace(length-1,length,((Button)view).getText());
+
         }else{
-            content.append(text);
+            content.append(((Button)view).getText());
         }
         return content;
     }
@@ -94,6 +96,7 @@ public class Monitor {
 
     private boolean textScanner() {
         String text=editText.getText().toString();
+
         return text.matches("");
     }
 }

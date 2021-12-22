@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 public class Listener implements View.OnClickListener, View.OnLongClickListener {
 
-    private HashMap<String,Button> operatorButtons;
+    private HashMap<Character,Button> operatorButtons;
 
     private Button clear;
     private ImageButton backDelete;
@@ -20,13 +20,16 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
     private Button[] numberButtons;
 
     private Activity activity;
-    private Monitor textDisplayer;
+    private Monitor monitor;
+
+    private Button currentClickedButton;
+    private Button previousClickedButton;
 
     public Listener(Activity activity) {
         this.activity=activity;
+        monitor=new Monitor(activity);
         numberButtons=new Button[9];
-        textDisplayer=new Monitor(activity);
-        operatorButtons=new HashMap<String, Button>();
+        operatorButtons=new HashMap<Character, Button>();
         init();
     }
 
@@ -36,12 +39,12 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
         backDelete=(ImageButton)activity.findViewById(R.id.back_delete);
         change=(ImageButton)activity.findViewById(R.id.change);
 
-        operatorButtons.put("×",activity.findViewById(R.id.btn_multiple));
-        operatorButtons.put("-",activity.findViewById(R.id.btn_minus));
-        operatorButtons.put("+",activity.findViewById(R.id.btn_plus));
-        operatorButtons.put(".",activity.findViewById(R.id.btn_dot));
-        operatorButtons.put("%",activity.findViewById(R.id.btn_percent));
-        operatorButtons.put("÷",activity.findViewById(R.id.btn_divide));
+        operatorButtons.put('×',activity.findViewById(R.id.btn_multiple));
+        operatorButtons.put('-',activity.findViewById(R.id.btn_minus));
+        operatorButtons.put('+',activity.findViewById(R.id.btn_plus));
+        operatorButtons.put('.',activity.findViewById(R.id.btn_dot));
+        operatorButtons.put('%',activity.findViewById(R.id.btn_percent));
+        operatorButtons.put('÷',activity.findViewById(R.id.btn_divide));
 
         numberButtons[0]=activity.findViewById(R.id.btn_1);
         numberButtons[1]=activity.findViewById(R.id.btn_2);
@@ -73,26 +76,26 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
 
     @Override
     public void onClick(View v) {
-        boolean isFinded=onClickEditButtons(v);
-        if(isFinded){
+        previousClickedButton = currentClickedButton;
+        currentClickedButton = (Button)v;
+        boolean isActionButton=onActionEditButtons(v);
+        if(isActionButton){
             return;
         }
-        Button button=(Button)v;
-        if(button!=null)
-            textDisplayer.append(button.getText(),operatorButtons);
+        monitor.append(v,previousClickedButton);
     }
 
-    private boolean onClickEditButtons(View view){
+    private boolean onActionEditButtons(View view){
         switch (view.getId()){
             case R.id.clear:
-                textDisplayer.delete(true,false);
+                monitor.delete(true,false);
                 return true;
             case R.id.equal:
                 return true;
             case R.id.change:
                 return true;
             case R.id.back_delete:
-                textDisplayer.delete(false,false);
+                monitor.delete(false,false);
                 return true;
             default:
                 return false;
@@ -102,7 +105,7 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
     @Override
     public boolean onLongClick(View v) {
         if(v.getId()==backDelete.getId()){
-            textDisplayer.delete(false,true);
+            monitor.delete(false,true);
         }
         return false;
     }

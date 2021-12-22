@@ -8,13 +8,15 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity{
 
-
+    private  Monitor monitor;
+    private  Listener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Listener listener=new Listener(this);
+        monitor=new Monitor(this);
+        listener=new Listener(this);
     }
 
     @Override
@@ -26,4 +28,11 @@ public class MainActivity extends AppCompatActivity{
         return true;
     }
 
+    public Monitor getMonitor() {
+        return monitor;
+    }
+
+    public Listener getListener() {
+        return listener;
+    }
 }
