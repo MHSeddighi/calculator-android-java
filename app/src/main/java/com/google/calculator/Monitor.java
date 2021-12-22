@@ -34,14 +34,17 @@ public class Monitor {
 
     public void delete(boolean deleteAll,boolean fastDelete){
         int length=editText.getText().length();
+        int selectionStart=editText.getSelectionStart();
         Editable text =editText.getText();
         if(length!=0) {
             if (deleteAll) {
                 text.clear();
             } else if(fastDelete){
                 fastDelete();
+            }else if(selectionStart == -1){
+                text.delete(length-1, length);
             }else{
-                text.delete(editText.getSelectionStart(), editText.getSelectionStart()+1);
+                text.delete(selectionStart-1, selectionStart);
             }
         }
     }
@@ -70,7 +73,7 @@ public class Monitor {
     public Editable append(View view,Button previousClicked){
         Editable content =editText.getText();
         int length=content.length();
-        if(view==null){
+        if(view==null && previousClicked==null){
             return content;
         }
         if(!view.getTag().equals("operator")){

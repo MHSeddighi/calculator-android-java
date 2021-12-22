@@ -1,7 +1,6 @@
 package com.google.calculator;
 
 import android.app.Activity;
-import android.text.Editable;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.view.View;
@@ -77,12 +76,19 @@ public class Listener implements View.OnClickListener, View.OnLongClickListener 
     @Override
     public void onClick(View v) {
         previousClickedButton = currentClickedButton;
-        currentClickedButton = (Button)v;
+        if(v instanceof ImageButton){
+            currentClickedButton = null;
+        }else{
+            currentClickedButton = (Button)v;
+        }
+
         boolean isActionButton=onActionEditButtons(v);
         if(isActionButton){
             return;
         }
+
         monitor.append(v,previousClickedButton);
+
     }
 
     private boolean onActionEditButtons(View view){
